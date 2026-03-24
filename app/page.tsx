@@ -120,6 +120,9 @@ export default function Home() {
           ))}
         </tbody>
       </table>
+      <footer style={{ marginTop: 40, padding: 20, borderTop: '1px solid #ccc', color: '#888', fontSize: 14 }}>
+        AIサービス安全性ミニディレクトリ — 練習プロジェクト
+      </footer>
     </main>
   )
 }
