@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase_typo'
+import { supabase } from '@/lib/supabase'
 
 type Service = {
   id: string
