@@ -9,6 +9,7 @@ type Service = {
   url: string | null
   safety_score: number | null
   real_nationality: string | null
+  memo: string | null
   created_at: string
 }
 
@@ -18,6 +19,7 @@ export default function Home() {
   const [url, setUrl] = useState('')
   const [score, setScore] = useState('')
   const [nationality, setNationality] = useState('')
+  const [memo, setMemo] = useState('')
 
   // データ読み込み
   async function loadServices() {
@@ -41,11 +43,13 @@ export default function Home() {
       url: url || null,
       safety_score: score ? parseInt(score) : null,
       real_nationality: nationality || null,
+      memo: memo || null,
     })
     setName('')
     setUrl('')
     setScore('')
     setNationality('')
+    setMemo('')
     loadServices()
   }
 
@@ -80,6 +84,11 @@ export default function Home() {
             onChange={e => setNationality(e.target.value)}
             style={{ width: '100%', padding: 8 }} />
         </div>
+        <div style={{ marginBottom: 10 }}>
+          <input placeholder="メモ" value={memo}
+            onChange={e => setMemo(e.target.value)}
+            style={{ width: '100%', padding: 8 }} />
+        </div>
         <button onClick={handleSubmit} style={{ padding: '8px 20px' }}>
           登録
         </button>
@@ -94,6 +103,7 @@ export default function Home() {
             <th style={{ textAlign: 'left', padding: 8 }}>URL</th>
             <th style={{ textAlign: 'center', padding: 8 }}>安全性</th>
             <th style={{ textAlign: 'left', padding: 8 }}>実質国籍</th>
+            <th style={{ textAlign: 'left', padding: 8 }}>メモ</th>
           </tr>
         </thead>
         <tbody>
@@ -105,6 +115,7 @@ export default function Home() {
               </td>
               <td style={{ textAlign: 'center', padding: 8 }}>{s.safety_score}</td>
               <td style={{ padding: 8 }}>{s.real_nationality}</td>
+              <td style={{ padding: 8 }}>{s.memo}</td>
             </tr>
           ))}
         </tbody>
