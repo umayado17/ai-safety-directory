@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <main style={{ maxWidth: 800, margin: '0 auto', padding: 20 }}>
-      <h1>AIサービス安全性ミニディレクトリ</h1>
+      <h1>🛡️ AIサービス安全性ミニディレクトリ v2</h1>
 
       {/* 登録フォーム */}
       <div style={{ marginBottom: 30, padding: 20, border: '1px solid #ccc' }}>
